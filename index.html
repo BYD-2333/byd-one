@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>biyangde</title>
+    <title>Flex布局测试</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #eee;
+        }
+
+        * {
+            border: 1px solid red;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .baise {
+            background-color: white;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+        .bianju {margin: 3px;}
+    </style>
+
 </head>
-<body>
-    <div style="
-        background-color: azure;
-        text-align:center;">
-        <img src="https://ts4.cn.mm.bing.net/th?id=OIP-C.nVhMpP8DS2HjCQ8uCOfDyQAAAA&w=150&h=150&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" 
-        alt="错误">
-    </div>
-    <div style="
-        background-color: beige; 
-        text-align:center; 
-        max-width: 3000px;
-        padding: 15px;
-        line-height: 1.5;" >
-        <p>哇</p>
-        <p>你好你好</p>
-        <p style="color: blueviolet;">这是丌覌电台的网站</p>
-        <a href="https://www.bilibili.com/">哔哩哔哩网站</a>
-        <p>----加粗-<b>加粗文本测试</b>-加粗----</p>
-        <input><p>只是可以打字，没什么用</p>
-        <i>斜体测试</i>
-    </div>
+
+<body class="flex">
+    <div style="width: 130px" class="baise bianju"></div> <!--侧边栏-->
+    <div class="flex1 flex column">
+        <div class="baise" style="height: 100px;"></div><!--头部栏-->
+        <div class="flex1 flex">
+            <div style="flex: 3;" class="flex column">
+                <div class="flex" style="height: 80px;">
+                    <div class="flex1 baise bianju"></div><!--数据块1-->
+                    <div class="flex1 baise bianju"></div><!--数据块2-->
+                    <div class="flex1 baise bianju"></div><!--数据块3-->
+                </div><!--数据区-->
+                <div class="flex column">
+                    <div class="baise" style="height: 150px;"></div><!--列表项1-->
+                    <div class="baise" style="height: 150px;"></div><!--列表项2-->
+                    <div class="baise" style="height: 150px;"></div><!--列表项3-->
+                </div><!--列表区-->
+            </div><!--左区-->
+            <div style="flex: 1;" class="flex column bianju">
+                <div class="baise" style="height: 100px;"></div><!--提示区-->
+                <div class="baise" style="height: 300px;"></div><!--消息区-->
+            </div><!--右区-->
+        </div><!--内容区-->
+    </div> <!--主区域-->
+
 
 </body>
+
 </html>
